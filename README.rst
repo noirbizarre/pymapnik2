@@ -2,6 +2,9 @@
 Introduction
 ==========================
 
+.. image:: https://secure.travis-ci.org/mapnik/pymapnik2.png
+   :target: http://travis-ci.org/mapnik/pymapnik2
+
 .. contents::
 
 

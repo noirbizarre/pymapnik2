@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+env:
+  - PPA_VERSION=2.0
+  # Trunk is not not working
+  # - PPA_VERSION=trunk
+# Trigger system dependencies installation
+before_install:
+ - echo 'yes' | sudo add-apt-repository ppa:mapnik/nightly-$PPA_VERSION
+ - sudo apt-get update -qq
+ - sudo aptitude install -y -q10 libmapnik libmapnik-dev mapnik-utils
+install:
+  - pip install -U . --use-mirrors
+  - pip install nose --use-mirrors
+# command to run tests
+script: nosetests
